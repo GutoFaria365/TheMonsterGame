@@ -24,4 +24,7 @@ public abstract class Monster {
     public int getSpecialPower() {
         return specialPower;
     }
+    public void setHealth(int health){
+        this.health = health;
+    }
 }
