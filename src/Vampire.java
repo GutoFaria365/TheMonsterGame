@@ -9,4 +9,9 @@ public class Vampire extends Monster {
         this.health = 100;
         this.specialPower = 1;
     }
+
+    @Override
+    public void monsterAttack() {
+
+    }
 }

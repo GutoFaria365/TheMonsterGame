@@ -11,4 +11,9 @@ public class Mummy extends Monster {
         this.specialPower = 2;
 
     }
+
+    @Override
+    public void monsterAttack() {
+
+    }
 }

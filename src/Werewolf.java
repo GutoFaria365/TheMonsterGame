@@ -9,4 +9,9 @@ public class Werewolf extends Monster {
         this.health = 120;
         this.specialPower = 0;
     }
+
+    @Override
+    public void monsterAttack() {
+        this.attackPower = attackPower;
+    }
 }

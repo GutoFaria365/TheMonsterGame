@@ -30,7 +30,6 @@ public abstract class Monster {
     public void setHealth(int health){
         this.health = health;
     }
-    public static int generateGuessingNumber(){
-        return (int) (Math.random() * (3) + 1);
-    }
+
+    public abstract void monsterAttack();
 }
