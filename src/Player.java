@@ -19,6 +19,10 @@ public class Player {
         return monsters;
     }
 
+    public String getPlayerName() {
+        return playerName;
+    }
+
     public void setNumberOfMonsters(int numberOfMonsters) {
         this.numberOfMonsters = numberOfMonsters;
     }
