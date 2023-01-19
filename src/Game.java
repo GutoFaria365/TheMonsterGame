@@ -9,7 +9,6 @@ public class Game {
         } else {
             System.out.println("The number of monsters selected doesn't match, select the same value for both players!!");
             return;
-
         }
     }
     public void randomMonster(Player player) {

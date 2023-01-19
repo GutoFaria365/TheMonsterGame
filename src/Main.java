@@ -8,8 +8,10 @@ public class Main {
 
         Game game1 = new Game();
         game1.gameStart(p1,p2);
-        System.out.println(p1.monsters);
-        System.out.println(p2.monsters);
+
+        for (int i = 0; i < p1.getNumberOfMonsters(); i++) {
+            System.out.println(p1.monsters[i].getName());
+        }
 
     }
 
