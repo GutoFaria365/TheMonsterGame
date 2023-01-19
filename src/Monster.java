@@ -31,4 +31,9 @@ public abstract class Monster {
     public void randomMonster(Player player) {
 
     }
+
+    public int generateGuessingNumber(){
+
+        return (int) (Math.random() * (3) + 1);
+    }
 }
