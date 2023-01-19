@@ -7,7 +7,6 @@ public class Main {
         Player p2 = new Player("Calimero", 5);
 
         Game game1 = new Game();
-
         game1.gameStart(p1,p2);
 
 

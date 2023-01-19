@@ -27,4 +27,8 @@ public abstract class Monster {
     public void setHealth(int health){
         this.health = health;
     }
+
+    public void randomMonster(Player player) {
+
+    }
 }
