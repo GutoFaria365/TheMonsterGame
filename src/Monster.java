@@ -28,12 +28,8 @@ public abstract class Monster {
         this.health = health;
     }
 
-    public void randomMonster(Player player) {
 
-    }
-
-    public int generateGuessingNumber(){
-
+    public static int generateGuessingNumber(){
         return (int) (Math.random() * (3) + 1);
     }
 }
