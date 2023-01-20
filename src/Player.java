@@ -47,9 +47,9 @@ public class Player {
             return null;
         }
         for (int i = 0; i < monsters.length; i++) {
-            if (monsters[i].isDead()){
+            if (monsters[i].isDead == true){
                 for (int j = i+1; j < monsters.length; j++) {
-                    if(monsters[j].isDead() == false){
+                    if(monsters[j].isDead == false){
                         Monster temp = monsters[j];
                         monsters[j] = monsters[i];
                         monsters[i] = temp;
