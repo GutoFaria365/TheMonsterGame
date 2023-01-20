@@ -18,6 +18,14 @@ public class Player {
         return numberOfMonsters;
     }
 
+    public int getMonstersAlive() {
+        return monstersAlive;
+    }
+
+    public void setMonstersAlive(int monstersAlive) {
+        this.monstersAlive = monstersAlive;
+    }
+
     public Monster[] getMonsters() {
         return monsters;
     }

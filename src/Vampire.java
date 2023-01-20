@@ -16,10 +16,10 @@ public class Vampire extends Monster {
         monster.isDead();
 
         //small chance of recovering health
-        int healthBoost = Utilities.generateGuessingNumber(1,10);
+        /*int healthBoost = Utilities.generateGuessingNumber(1,10);
         if(healthBoost == 10) {
             System.out.println("Health Boost!!!");
             this.health+= 20;
-        }
+        }*/
     }
 }

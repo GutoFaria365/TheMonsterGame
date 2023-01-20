@@ -43,15 +43,22 @@ public class Game {
         }
     }
     public void actualGame() {
-        while (firstPlayer.monsters != null && secondPlayer.monsters != null) {
-
+        while (firstPlayer.getMonstersAlive() != 0 && secondPlayer.getMonstersAlive() != 0) {
+            System.out.println("-------------------NEW ROUND-----------------");
             System.out.println(firstPlayer.getPlayerName() + "'s turn!");
             firstPlayer.monsters[Utilities.generateGuessingNumber(0, firstPlayer.getNumberOfMonsters() - 1)].monsterAttack(secondPlayer.monsters[Utilities.generateGuessingNumber(0, secondPlayer.getNumberOfMonsters() - 1)]);
-
-
+            for (int i = 0; i < firstPlayer.getNumberOfMonsters(); i++) {
+                if (firstPlayer.monsters[i].isDead()) {
+                    firstPlayer.setMonstersAlive(firstPlayer.getMonstersAlive() - 1);
+                }
+            }
             System.out.println(secondPlayer.getPlayerName() + "'s turn!");
             secondPlayer.monsters[Utilities.generateGuessingNumber(0, secondPlayer.getNumberOfMonsters() - 1)].monsterAttack(firstPlayer.monsters[Utilities.generateGuessingNumber(0, firstPlayer.getNumberOfMonsters() - 1)]);
-
+            for (int i = 0; i < secondPlayer.getNumberOfMonsters(); i++) {
+                if (secondPlayer.monsters[i].isDead()) {
+                    secondPlayer.setMonstersAlive(secondPlayer.getMonstersAlive() - 1);
+                }
+            }
         }
     }
 }

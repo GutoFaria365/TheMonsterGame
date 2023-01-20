@@ -29,11 +29,12 @@ public abstract class Monster {
     }
     public abstract void monsterAttack(Monster monster);
 
-    public void isDead(){
+    public boolean isDead(){
         if(this.health <= 0) {
             this.isDead = true;
             System.out.println(this.getName() + " has been slain!!!");
         } else
             System.out.println(this.getName() + " has " + this.health + " health remaining.");
+        return false;
     }
 }
