@@ -19,7 +19,7 @@ public class Vampire extends Monster {
         }
         System.out.println(monster.getName() + " has " + monster.health + " health remaining.");
 
-        int healthBoost = Game.generateGuessingNumber(1,10);
+        int healthBoost = Utilities.generateGuessingNumber(1,10);
         if(healthBoost == 10) { //small chance of recovering health
             System.out.println("Health Boost!!!");
             this.health+= 20;

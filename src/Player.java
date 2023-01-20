@@ -1,7 +1,7 @@
 public class Player {
     private String playerName;
     private int numberOfMonsters;
-    public Monster[] monsters = new Monster[numberOfMonsters];
+    public Monster[] monsters;
 
 
 
