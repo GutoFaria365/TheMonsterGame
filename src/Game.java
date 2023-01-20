@@ -46,19 +46,27 @@ public class Game {
         while (firstPlayer.getMonstersAlive() != 0 && secondPlayer.getMonstersAlive() != 0) {
             System.out.println("-------------------NEW ROUND-----------------");
             System.out.println(firstPlayer.getPlayerName() + "'s turn!");
-            firstPlayer.monsters[Utilities.generateGuessingNumber(0, firstPlayer.getNumberOfMonsters() - 1)].monsterAttack(secondPlayer.monsters[Utilities.generateGuessingNumber(0, secondPlayer.getNumberOfMonsters() - 1)]);
-            for (int i = 0; i < firstPlayer.getNumberOfMonsters(); i++) {
-                if (firstPlayer.monsters[i].isDead()) {
-                    firstPlayer.setMonstersAlive(firstPlayer.getMonstersAlive() - 1);
-                }
-            }
+
+            int attackingMonster = Utilities.generateGuessingNumber(0, firstPlayer.getMonstersAlive() - 1);
+            int defendingMonster = Utilities.generateGuessingNumber(0, secondPlayer.getMonstersAlive() - 1);
+
+
+            firstPlayer.monsters[attackingMonster].monsterAttack(secondPlayer.monsters[defendingMonster]);
+            secondPlayer.monsters[defendingMonster].isDead();
+
+
             System.out.println(secondPlayer.getPlayerName() + "'s turn!");
-            secondPlayer.monsters[Utilities.generateGuessingNumber(0, secondPlayer.getNumberOfMonsters() - 1)].monsterAttack(firstPlayer.monsters[Utilities.generateGuessingNumber(0, firstPlayer.getNumberOfMonsters() - 1)]);
+
+            secondPlayer.monsters[Utilities.generateGuessingNumber(0, secondPlayer.getMonstersAlive() - 1)].monsterAttack(firstPlayer.monsters[Utilities.generateGuessingNumber(0, firstPlayer.getMonstersAlive() - 1)]);
+
+
             for (int i = 0; i < secondPlayer.getNumberOfMonsters(); i++) {
                 if (secondPlayer.monsters[i].isDead()) {
                     secondPlayer.setMonstersAlive(secondPlayer.getMonstersAlive() - 1);
                 }
             }
+
+
         }
     }
 }
