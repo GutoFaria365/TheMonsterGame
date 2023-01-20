@@ -52,7 +52,10 @@ public class Game {
 
 
             firstPlayer.monsters[attackingMonster].monsterAttack(secondPlayer.monsters[defendingMonster]);
-            secondPlayer.monsters[defendingMonster].isDead();
+            if(secondPlayer.monsters[defendingMonster].isDead()){
+                secondPlayer.setMonstersAlive(secondPlayer.getMonstersAlive()-1);
+
+            };
 
 
             System.out.println(secondPlayer.getPlayerName() + "'s turn!");
