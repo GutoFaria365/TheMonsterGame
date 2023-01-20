@@ -56,6 +56,7 @@ public class Game {
             firstPlayer.monsters[attackingMonster1].monsterAttack(secondPlayer.monsters[defendingMonster1]);
             if(secondPlayer.monsters[defendingMonster1].isDead()) {
                 secondPlayer.setMonstersAlive(secondPlayer.getMonstersAlive()-1);
+                //asdasds
             };
 
 
