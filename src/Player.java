@@ -41,4 +41,26 @@ public class Player {
     public void setMonsters(Monster[] monsters) {
         this.monsters = new Monster[numberOfMonsters];
     }
+
+    public Monster[] sortArray (){
+        if (this.monsters == null){
+            return null;
+        }
+        for (int i = 0; i < monsters.length; i++) {
+            if (monsters[i].isDead()){
+                for (int j = i+1; j < monsters.length; j++) {
+                    if(monsters[j].isDead() == false){
+                        Monster temp = monsters[j];
+                        monsters[j] = monsters[i];
+                        monsters[i] = temp;
+                        break;
+                        //names[j] = null;
+                    } else if (monsters[j].isDead()) {
+                        continue;
+                    }
+
+                }
+            }
+        }return monsters;
+    }
 }
