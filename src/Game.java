@@ -42,34 +42,31 @@ public class Game {
             }
         }
     }
+    public int MonsterSelector(Player player) {
+        return Utilities.generateGuessingNumber(0, player.getMonstersAlive() - 1);
+    }
     public void actualGame() {
         while (firstPlayer.getMonstersAlive() != 0 && secondPlayer.getMonstersAlive() != 0) {
             System.out.println("-------------------NEW ROUND-----------------");
+
             System.out.println(firstPlayer.getPlayerName() + "'s turn!");
+            int attackingMonster1 = MonsterSelector(firstPlayer);
+            int defendingMonster1 = MonsterSelector(secondPlayer);
 
-            int attackingMonster = Utilities.generateGuessingNumber(0, firstPlayer.getMonstersAlive() - 1);
-            int defendingMonster = Utilities.generateGuessingNumber(0, secondPlayer.getMonstersAlive() - 1);
-
-
-            firstPlayer.monsters[attackingMonster].monsterAttack(secondPlayer.monsters[defendingMonster]);
-            if(secondPlayer.monsters[defendingMonster].isDead()){
+            firstPlayer.monsters[attackingMonster1].monsterAttack(secondPlayer.monsters[defendingMonster1]);
+            if(secondPlayer.monsters[defendingMonster1].isDead()) {
                 secondPlayer.setMonstersAlive(secondPlayer.getMonstersAlive()-1);
-
             };
 
 
             System.out.println(secondPlayer.getPlayerName() + "'s turn!");
+            int attackingMonster2 = MonsterSelector(firstPlayer);
+            int defendingMonster2 = MonsterSelector(secondPlayer);
 
-            secondPlayer.monsters[Utilities.generateGuessingNumber(0, secondPlayer.getMonstersAlive() - 1)].monsterAttack(firstPlayer.monsters[Utilities.generateGuessingNumber(0, firstPlayer.getMonstersAlive() - 1)]);
-
-
-            for (int i = 0; i < secondPlayer.getNumberOfMonsters(); i++) {
-                if (secondPlayer.monsters[i].isDead()) {
-                    secondPlayer.setMonstersAlive(secondPlayer.getMonstersAlive() - 1);
-                }
+            secondPlayer.monsters[attackingMonster2].monsterAttack(firstPlayer.monsters[defendingMonster2]);
+            if (firstPlayer.monsters[defendingMonster2].isDead()) {
+                firstPlayer.setMonstersAlive(firstPlayer.getMonstersAlive() - 1);
             }
-
-
         }
     }
 }
