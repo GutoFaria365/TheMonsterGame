@@ -1,6 +1,7 @@
 public class Player {
     private String playerName;
     private int numberOfMonsters;
+    private int monstersAlive;
     public Monster[] monsters;
 
 
@@ -10,6 +11,7 @@ public class Player {
         this.playerName = name;
         this.numberOfMonsters = numberOfMonsters;
         this.monsters = new Monster[numberOfMonsters];
+        this.monstersAlive = numberOfMonsters;
     }
 
     public int getNumberOfMonsters() {
