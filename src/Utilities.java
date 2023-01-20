@@ -1,5 +1,4 @@
 public class Utilities {
-
     public static int generateGuessingNumber(){
         return (int) (Math.random() * (3) + 1);
     }

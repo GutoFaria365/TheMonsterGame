@@ -23,19 +23,12 @@ public class Game {
     public void randomMonster(Player player) {
         for (int i = 0; i < player.getNumberOfMonsters(); i++) {
             switch (Utilities.generateGuessingNumber()) {
-                case 1:
-                    player.monsters[i] = new Werewolf();
-                    break;
-                case 2:
-                    player.monsters[i] = new Vampire();
-                    break;
-                case 3:
-                    player.monsters[i] = new Mummy();
-                    break;
+                case 1 -> player.monsters[i] = new Werewolf();
+                case 2 -> player.monsters[i] = new Vampire();
+                case 3 -> player.monsters[i] = new Mummy();
             }
         }
     }
-
     public Player firstPlayer;
     public Player secondPlayer;
     public void whoGoesFirst (Player p1, Player p2) {

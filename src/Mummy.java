@@ -15,10 +15,8 @@ public class Mummy extends Monster {
     public void monsterAttack(Monster monster) {
         monster.health -= this.getAttackPower();
         System.out.println(this.getName() + " is attacking " + monster.getName() + " for " + this.getAttackPower() + "  points of damage!");
-        if(monster.health <= 0) {
-            System.out.println(monster.getName() + " has been slain!!!");
-            monster = null;
-        }
-        System.out.println(monster.getName() + " has " + monster.health + " health remaining.");
+        monster.isDead();
+
+        //if it attacks a third time in a row it will lose some health
     }
 }

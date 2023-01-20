@@ -3,8 +3,6 @@ public class Main {
         System.out.println("Hello People!");
         System.out.println("Boas");
 
-        Player p1 = new Player("Boda", 10);
-        Player p2 = new Player("Calimero", 10);
 
         Game game1 = new Game();
         game1.gameStart();
