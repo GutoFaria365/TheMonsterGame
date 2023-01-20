@@ -10,7 +10,7 @@ public class Main {
         game1.gameStart(p1,p2);
 
         for (int i = 0; i < p1.getNumberOfMonsters(); i++) {
-            System.out.println(p1.monsters[i].getName());
+           p1.monsters[i].monsterAttack(p2.monsters[i]);
         }
 
     }

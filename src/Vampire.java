@@ -11,7 +11,16 @@ public class Vampire extends Monster {
     }
 
     @Override
-    public void monsterAttack() {
+    public void monsterAttack(Monster monster) {
+        monster.health -= this.getAttackPower();
+        System.out.println(this.getName() + " attacked the monster " + monster.getName());
+
+        int healthBoost = Game.generateGuessingNumber(1,10);
+
+        if( healthBoost==10){
+            System.out.println("Health Boost!!!");
+            this.health+= 20;
+        }
 
     }
 }

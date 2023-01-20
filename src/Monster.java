@@ -31,5 +31,5 @@ public abstract class Monster {
         this.health = health;
     }
 
-    public abstract void monsterAttack();
+    public abstract void monsterAttack(Monster monster);
 }

@@ -13,7 +13,9 @@ public class Mummy extends Monster {
     }
 
     @Override
-    public void monsterAttack() {
+    public void monsterAttack(Monster monster) {
+        monster.health -= this.getAttackPower();
+        System.out.println(this.getName() + " attacked the monster " + monster.getName());
 
     }
 }
