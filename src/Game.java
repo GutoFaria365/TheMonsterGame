@@ -1,11 +1,19 @@
 public class Game {
-    public void gameStart (Player p1, Player p2) {
-        if (p1.getNumberOfMonsters() == p2.getNumberOfMonsters()) {
-            System.out.println("Welcome " + p1.getPlayerName() + " and " + p2.getPlayerName() + "!");
-            System.out.println("The game will start with " + p1.getNumberOfMonsters() + " monsters!!!");
-            randomMonster(p1);
-            randomMonster(p2);
-            whoGoesFirst(p1, p2);
+    private Player playerOne;
+    private Player playerTwo;
+
+    public Game() {
+        this.playerOne = new Player("Tiago", 5);
+        this.playerTwo = new Player("Beatriz", 5);
+    }
+
+    public void gameStart () {
+        if (this.playerOne.getNumberOfMonsters() == this.playerTwo.getNumberOfMonsters()) {
+            System.out.println("Welcome " + this.playerOne.getPlayerName() + " and " + this.playerTwo.getPlayerName() + "!");
+            System.out.println("The game will start with " + this.playerOne.getNumberOfMonsters() + " monsters!!!");
+            randomMonster(this.playerOne);
+            randomMonster(this.playerTwo);
+            whoGoesFirst(this.playerOne, this.playerTwo);
 
 
         } else {
@@ -15,7 +23,7 @@ public class Game {
     }
     public void randomMonster(Player player) {
         for (int i = 0; i < player.getNumberOfMonsters(); i++) {
-            switch (generateGuessingNumber()) {
+            switch (Utilities.generateGuessingNumber()) {
                 case 1:
                     player.monsters[i] = new Werewolf();
                     break;
@@ -28,16 +36,11 @@ public class Game {
             }
         }
     }
-    public static int generateGuessingNumber(){
-        return (int) (Math.random() * (3) + 1);
-    }
-    public static int generateGuessingNumber(int min, int max){
-        return (int) (Math.random() * (max - min + 1) + min);
-    }
+
     public Player firstPlayer;
     public Player secondPlayer;
     public void whoGoesFirst (Player p1, Player p2) {
-        switch(generateGuessingNumber(1, 2)) {
+        switch(Utilities.generateGuessingNumber(1, 2)) {
             case 1:
                 firstPlayer = p1;
                 secondPlayer = p2;

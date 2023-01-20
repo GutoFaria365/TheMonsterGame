@@ -7,7 +7,7 @@ public class Main {
         Player p2 = new Player("Calimero", 5);
 
         Game game1 = new Game();
-        game1.gameStart(p1,p2);
+        game1.gameStart();
 
         for (int i = 0; i < p1.getNumberOfMonsters(); i++) {
            p1.monsters[i].monsterAttack(p2.monsters[i]);
