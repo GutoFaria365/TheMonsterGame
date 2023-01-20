@@ -55,7 +55,7 @@ public class Player {
                         monsters[i] = temp;
                         break;
                         //names[j] = null;
-                    } else if (monsters[j].isDead()) {
+                    } else if (monsters[j].isDead == true) {
                         continue;
                     }
 
