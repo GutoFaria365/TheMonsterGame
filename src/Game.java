@@ -17,7 +17,6 @@ public class Game {
             actualGame();
         } else {
             System.out.println("The number of monsters selected doesn't match, select the same value for both players!!");
-            return;
         }
     }
     public void randomMonster(Player player) {
@@ -45,10 +44,13 @@ public class Game {
     }
     public void actualGame() {
         while (firstPlayer.monsters != null && secondPlayer.monsters != null) {
+
             System.out.println(firstPlayer.getPlayerName() + "'s turn!");
-            firstPlayer.monsters[Utilities.generateGuessingNumber(0, firstPlayer.getNumberOfMonsters()) - 1].monsterAttack(secondPlayer.monsters[Utilities.generateGuessingNumber(0, secondPlayer.getNumberOfMonsters()) - 1]);
+            firstPlayer.monsters[Utilities.generateGuessingNumber(0, firstPlayer.getNumberOfMonsters() - 1)].monsterAttack(secondPlayer.monsters[Utilities.generateGuessingNumber(0, secondPlayer.getNumberOfMonsters() - 1)]);
+
+
             System.out.println(secondPlayer.getPlayerName() + "'s turn!");
-            secondPlayer.monsters[Utilities.generateGuessingNumber(0, secondPlayer.getNumberOfMonsters()) - 1].monsterAttack(firstPlayer.monsters[Utilities.generateGuessingNumber(0, firstPlayer.getNumberOfMonsters()) - 1]);
+            secondPlayer.monsters[Utilities.generateGuessingNumber(0, secondPlayer.getNumberOfMonsters() - 1)].monsterAttack(firstPlayer.monsters[Utilities.generateGuessingNumber(0, firstPlayer.getNumberOfMonsters() - 1)]);
 
         }
     }
