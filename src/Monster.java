@@ -2,10 +2,12 @@ public abstract class Monster {
     public String name;
     public int attackPower;
     public int health;
+    private boolean isDead;
     public Monster(String name, int attackPower, int health) {
         this.name = name;
         this.attackPower = attackPower;
         this.health = health;
+        this.isDead = false;
     }
     public Monster() {
 
@@ -26,4 +28,12 @@ public abstract class Monster {
         this.health = health;
     }
     public abstract void monsterAttack(Monster monster);
+
+    public void isDead(){
+        if(this.health<=0){
+            this.isDead = true;
+            System.out.println(this.getName() + " has been  slain!!!");
+        }
+        return;
+    }
 }
