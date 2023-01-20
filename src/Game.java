@@ -62,7 +62,6 @@ public class Game {
             if (secondPlayer.monsters[defendingMonster1].isDead) {
                 secondPlayer.setMonstersAlive(secondPlayer.getMonstersAlive() - 1);
                 secondPlayer.sortArray();
-                System.out.println(secondPlayer.getMonstersAlive());
             }
 
             System.out.println(secondPlayer.getPlayerName() + "'s turn!");
