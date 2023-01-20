@@ -1,10 +1,12 @@
 public class Game {
     private Player playerOne;
     private Player playerTwo;
+    private int roundCount;
 
     public Game() {
         this.playerOne = new Player("Tiago", 5);
         this.playerTwo = new Player("Beatriz", 5);
+        this.roundCount = 1;
     }
 
     public void gameStart() {
@@ -52,7 +54,7 @@ public class Game {
 
     public void actualGame() {
         while (firstPlayer.getMonstersAlive() != 0 && secondPlayer.getMonstersAlive() != 0) {
-            System.out.println("-------------------NEW ROUND-----------------");
+            System.out.println("-------------------NEW ROUND-----------------" + this.roundCount);
 
             System.out.println(firstPlayer.getPlayerName() + "'s turn!");
             int attackingMonster1 = MonsterSelector(firstPlayer);
@@ -78,6 +80,7 @@ public class Game {
                 firstPlayer.setMonstersAlive(firstPlayer.getMonstersAlive() - 1);
                 firstPlayer.sortArray();
             }
+            this.roundCount++;
         }
         printWinner();
     }
