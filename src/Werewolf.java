@@ -18,6 +18,5 @@ public class Werewolf extends Monster {
             monster = null;
         }
         System.out.println(monster.getName() + " has " + monster.health + " health remaining.");
-
     }
 }

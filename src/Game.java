@@ -50,11 +50,9 @@ public class Game {
     }
     public void actualGame() {
         while (firstPlayer.monsters != null && secondPlayer.monsters != null) {
-            /*firstPlayer.monsters[generateGuessingNumber(0, firstPlayer.getNumberOfMonsters()) - 1].monsterAttack();
-            secondPlayer.monsters[generateGuessingNumber(0, secondPlayer.getNumberOfMonsters()) - 1].setHealth();
+            firstPlayer.monsters[generateGuessingNumber(0, firstPlayer.getNumberOfMonsters()) - 1].monsterAttack(secondPlayer.monsters[generateGuessingNumber(0, secondPlayer.getNumberOfMonsters()) - 1]);
+            secondPlayer.monsters[generateGuessingNumber(0, secondPlayer.getNumberOfMonsters()) - 1].monsterAttack(firstPlayer.monsters[generateGuessingNumber(0, firstPlayer.getNumberOfMonsters()) - 1]);
 
-            secondPlayer.monsters[generateGuessingNumber(0, secondPlayer.getNumberOfMonsters()) - 1].monsterAttack();
-            firstPlayer.monsters[generateGuessingNumber(0, firstPlayer.getNumberOfMonsters()) - 1].setHealth();*/
         }
     }
 }
