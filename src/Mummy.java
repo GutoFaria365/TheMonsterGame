@@ -2,7 +2,7 @@ public class Mummy extends Monster {
 
     public Mummy(String name, int attackPower, int health) {
         super(name, attackPower, health);
-        //if it attacks a third time in a row it will lose some health
+
     }
     public Mummy() {
         this.name = "Mummy";
@@ -11,13 +11,27 @@ public class Mummy extends Monster {
         this.isDead = false;
 
     }
-
     @Override
     public void monsterAttack(Monster monster) {
-        monster.health -= this.getAttackPower();
-        System.out.println(this.getName() + " is attacking " + monster.getName() + " for " + this.getAttackPower() + "  points of damage!");
-        monster.isDead();
+        int consecutiveAttack = 0;
+        int countAttacks = 0;
 
-        //if it attacks a third time in a row it will lose some health
+        /*if (consecutiveAttack == 0) {
+            consecutiveAttack = getRoundCount;
+            countAttacks++;
+        } else if (getRoundCount - consecutiveAttack == 2) {
+            countAttacks++;
+        } else {
+            consecutiveAttack = 0;
+        }*/
+
+        if (countAttacks < 3) {
+            monster.health -= this.getAttackPower();
+            System.out.println(this.getName() + " is attacking " + monster.getName() + " for " + this.getAttackPower() + "  points of damage!");
+            monster.isDead();
+        } else {
+            System.out.println("GET REKT");
+            //if it attacks a third time in a row it will lose some health
+        }
     }
 }

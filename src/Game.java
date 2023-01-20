@@ -1,7 +1,11 @@
 public class Game {
     private Player playerOne;
     private Player playerTwo;
-    private int roundCount;
+    public int roundCount;
+
+    public int getRoundCount() {
+        return roundCount;
+    }
 
     public Game() {
         this.playerOne = new Player("Tiago", 5);
