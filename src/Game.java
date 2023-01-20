@@ -61,8 +61,13 @@ public class Game {
             firstPlayer.monsters[attackingMonster1].monsterAttack(secondPlayer.monsters[defendingMonster1]);
             if (secondPlayer.monsters[defendingMonster1].isDead) {
                 secondPlayer.setMonstersAlive(secondPlayer.getMonstersAlive() - 1);
-                secondPlayer.sortArray();
+               // secondPlayer.sortArray();
             }
+
+            if(secondPlayer.getMonstersAlive()==0){
+                break;
+            }
+
 
             System.out.println(secondPlayer.getPlayerName() + "'s turn!");
             int attackingMonster2 = MonsterSelector(firstPlayer);
@@ -71,7 +76,7 @@ public class Game {
             secondPlayer.monsters[attackingMonster2].monsterAttack(firstPlayer.monsters[defendingMonster2]);
             if (firstPlayer.monsters[defendingMonster2].isDead) {
                 firstPlayer.setMonstersAlive(firstPlayer.getMonstersAlive() - 1);
-                firstPlayer.sortArray();
+                //firstPlayer.sortArray();
             }
         }
         printWinner();
