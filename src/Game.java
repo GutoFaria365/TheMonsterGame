@@ -32,15 +32,15 @@ public class Game {
     public Player firstPlayer;
     public Player secondPlayer;
     public void whoGoesFirst (Player p1, Player p2) {
-        switch(Utilities.generateGuessingNumber(1, 2)) {
-            case 1:
+        switch (Utilities.generateGuessingNumber(1, 2)) {
+            case 1 -> {
                 firstPlayer = p1;
                 secondPlayer = p2;
-                break;
-            case 2:
+            }
+            case 2 -> {
                 firstPlayer = p2;
                 secondPlayer = p1;
-                break;
+            }
         }
     }
     public void actualGame() {
