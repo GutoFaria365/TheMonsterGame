@@ -2,7 +2,7 @@ public abstract class Monster {
     public String name;
     public int attackPower;
     public int health;
-    private boolean isDead;
+    public boolean isDead;
     public Monster(String name, int attackPower, int health) {
         this.name = name;
         this.attackPower = attackPower;
@@ -33,6 +33,7 @@ public abstract class Monster {
         if(this.health <= 0) {
             this.isDead = true;
             System.out.println(this.getName() + " has been slain!!!");
+            return true;
         } else {
             System.out.println(this.getName() + " has " + this.health + " health remaining.");
         }

@@ -7,6 +7,7 @@ public class Werewolf extends Monster {
         this.name = "Werewolf";
         this.attackPower = 20;
         this.health = 120;
+        this.isDead = false;
     }
 
     @Override

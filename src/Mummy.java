@@ -8,6 +8,7 @@ public class Mummy extends Monster {
         this.name = "Mummy";
         this.attackPower = 30;
         this.health = 80;
+        this.isDead = false;
 
     }
 

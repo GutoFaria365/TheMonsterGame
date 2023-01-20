@@ -7,7 +7,7 @@ public class Game {
         this.playerTwo = new Player("Beatriz", 5);
     }
 
-    public void gameStart () {
+    public void gameStart() {
         if (this.playerOne.getNumberOfMonsters() == this.playerTwo.getNumberOfMonsters()) {
             System.out.println("Welcome " + this.playerOne.getPlayerName() + " and " + this.playerTwo.getPlayerName() + "!");
             System.out.println("The game will start with " + this.playerOne.getNumberOfMonsters() + " monsters!!!");
@@ -19,6 +19,7 @@ public class Game {
             System.out.println("The number of monsters selected doesn't match, select the same value for both players!!");
         }
     }
+
     public void randomMonster(Player player) {
         for (int i = 0; i < player.getNumberOfMonsters(); i++) {
             switch (Utilities.generateGuessingNumber()) {
@@ -28,9 +29,11 @@ public class Game {
             }
         }
     }
+
     public Player firstPlayer;
     public Player secondPlayer;
-    public void whoGoesFirst (Player p1, Player p2) {
+
+    public void whoGoesFirst(Player p1, Player p2) {
         switch (Utilities.generateGuessingNumber(1, 2)) {
             case 1 -> {
                 firstPlayer = p1;
@@ -42,9 +45,11 @@ public class Game {
             }
         }
     }
+
     public int MonsterSelector(Player player) {
         return Utilities.generateGuessingNumber(0, player.getMonstersAlive() - 1);
     }
+
     public void actualGame() {
         while (firstPlayer.getMonstersAlive() != 0 && secondPlayer.getMonstersAlive() != 0) {
             System.out.println("-------------------NEW ROUND-----------------");
@@ -54,23 +59,28 @@ public class Game {
             int defendingMonster1 = MonsterSelector(secondPlayer);
 
             firstPlayer.monsters[attackingMonster1].monsterAttack(secondPlayer.monsters[defendingMonster1]);
-            if(secondPlayer.monsters[defendingMonster1].isDead()) {
-                secondPlayer.setMonstersAlive(secondPlayer.getMonstersAlive()-1);
-                //asdasds
-            };
-
+            if (secondPlayer.monsters[defendingMonster1].isDead) {
+                secondPlayer.setMonstersAlive(secondPlayer.getMonstersAlive() - 1);
+                System.out.println(secondPlayer.getMonstersAlive());
+            }
 
             System.out.println(secondPlayer.getPlayerName() + "'s turn!");
             int attackingMonster2 = MonsterSelector(firstPlayer);
             int defendingMonster2 = MonsterSelector(secondPlayer);
 
             secondPlayer.monsters[attackingMonster2].monsterAttack(firstPlayer.monsters[defendingMonster2]);
-            if (firstPlayer.monsters[defendingMonster2].isDead()) {
+            if (firstPlayer.monsters[defendingMonster2].isDead) {
                 firstPlayer.setMonstersAlive(firstPlayer.getMonstersAlive() - 1);
             }
         }
+        printWinner();
     }
-
-
-
+    public void printWinner() {
+        if (firstPlayer.getMonstersAlive() == 0) {
+            System.out.println(secondPlayer.getPlayerName() + " WINS!!!!!!!!!!!!");
+        } else {
+            System.out.println(firstPlayer.getPlayerName() + " WINS!!!!!!!!!!!!");
+        }
+    }
 }
+

@@ -7,6 +7,7 @@ public class Vampire extends Monster {
         this.name = "Vampire";
         this.attackPower = 20;
         this.health = 100;
+        this.isDead = false;
     }
 
     @Override
