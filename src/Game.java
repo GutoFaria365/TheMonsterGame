@@ -61,6 +61,7 @@ public class Game {
             firstPlayer.monsters[attackingMonster1].monsterAttack(secondPlayer.monsters[defendingMonster1]);
             if (secondPlayer.monsters[defendingMonster1].isDead) {
                 secondPlayer.setMonstersAlive(secondPlayer.getMonstersAlive() - 1);
+                secondPlayer.sortArray();
                 System.out.println(secondPlayer.getMonstersAlive());
             }
 
@@ -71,6 +72,7 @@ public class Game {
             secondPlayer.monsters[attackingMonster2].monsterAttack(firstPlayer.monsters[defendingMonster2]);
             if (firstPlayer.monsters[defendingMonster2].isDead) {
                 firstPlayer.setMonstersAlive(firstPlayer.getMonstersAlive() - 1);
+                firstPlayer.sortArray();
             }
         }
         printWinner();
