@@ -18,8 +18,6 @@ public abstract class Monster {
     public int getAttackPower() {
         return attackPower;
     }
-
-
     public int attack() {
         return attackPower;
     }

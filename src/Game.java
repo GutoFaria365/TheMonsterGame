@@ -54,12 +54,11 @@ public class Game {
 
     public void actualGame() {
         while (firstPlayer.getMonstersAlive() != 0 && secondPlayer.getMonstersAlive() != 0) {
-            System.out.println("-------------------NEW ROUND-----------------" + this.roundCount);
+            System.out.println("-------------------NEW ROUND " + this.roundCount + "-----------------");
 
             System.out.println(firstPlayer.getPlayerName() + "'s turn!");
             int attackingMonster1 = MonsterSelector(firstPlayer);
             int defendingMonster1 = MonsterSelector(secondPlayer);
-
             firstPlayer.monsters[attackingMonster1].monsterAttack(secondPlayer.monsters[defendingMonster1]);
             if (secondPlayer.monsters[defendingMonster1].isDead) {
                 secondPlayer.setMonstersAlive(secondPlayer.getMonstersAlive() - 1);
@@ -70,11 +69,9 @@ public class Game {
                 break;
             }
 
-
             System.out.println(secondPlayer.getPlayerName() + "'s turn!");
             int attackingMonster2 = MonsterSelector(firstPlayer);
             int defendingMonster2 = MonsterSelector(secondPlayer);
-
             secondPlayer.monsters[attackingMonster2].monsterAttack(firstPlayer.monsters[defendingMonster2]);
             if (firstPlayer.monsters[defendingMonster2].isDead) {
                 firstPlayer.setMonstersAlive(firstPlayer.getMonstersAlive() - 1);
