@@ -1,7 +1,7 @@
 public class Game {
     private Player playerOne;
     private Player playerTwo;
-    public int roundCount;
+    private int roundCount;
 
     public int getRoundCount() {
         return roundCount;

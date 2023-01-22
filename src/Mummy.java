@@ -1,5 +1,7 @@
 public class Mummy extends Monster {
 
+
+
     public Mummy(String name, int attackPower, int health) {
         super(name, attackPower, health);
 
@@ -15,15 +17,17 @@ public class Mummy extends Monster {
     public void monsterAttack(Monster monster) {
         int consecutiveAttack = 0;
         int countAttacks = 0;
+        Game round = new Game();
 
-        /*if (consecutiveAttack == 0) {
-            consecutiveAttack = getRoundCount;
+        if (consecutiveAttack == 0) {
+            consecutiveAttack = round.getRoundCount();
             countAttacks++;
-        } else if (getRoundCount - consecutiveAttack == 2) {
+        } else if (round.getRoundCount() - consecutiveAttack == 2) {
             countAttacks++;
         } else {
             consecutiveAttack = 0;
-        }*/
+            countAttacks = 0;
+        }
 
         if (countAttacks < 3) {
             monster.health -= this.getAttackPower();
