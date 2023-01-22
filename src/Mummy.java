@@ -42,6 +42,7 @@ public class Mummy extends Monster {
                 this.countAttacks = 0;
                 System.out.println(this.countAttacks + "round3a" + this.consecutiveAttack2 + Game.roundCount);
             } else;
+
         }
         if (this.countAttacks < 4) {
             monster.health -= this.getAttackPower();
