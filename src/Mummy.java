@@ -11,6 +11,7 @@ public class Mummy extends Monster {
         this.attackPower = 30;
         this.health = 80;
         this.isDead = false;
+
     }
     @Override
     public void monsterAttack(Monster monster) {
