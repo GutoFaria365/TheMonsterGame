@@ -18,7 +18,7 @@ public abstract class Monster {
     public int getAttackPower() {
         return attackPower;
     }
-    public int attack() {
+    public int getAttack() {
         return attackPower;
     }
     public int getHealth() {
