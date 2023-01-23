@@ -69,7 +69,7 @@ public class Game {
                 secondPlayer.sortArray();
             }
 
-            if(secondPlayer.getMonstersAlive()==0){
+            if(secondPlayer.getMonstersAlive() == 0){
                 break;
             }
 
