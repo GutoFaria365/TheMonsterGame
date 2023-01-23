@@ -13,7 +13,7 @@ public class Vampire extends Monster {
     @Override
     public void monsterAttack(Monster monster) {
         monster.health -= this.getAttackPower();
-        System.out.println(this.getName() + " is attacking " + monster.getName() + " for " + this.getAttackPower() + "  points of damage!");
+        System.out.println(this.getName() + this.hashCode() + " is attacking " + monster.getName() + monster.hashCode() + " for " + this.getAttackPower() + "  points of damage!");
 
         //small chance of recovering health
         int healthBoost = Utilities.generateGuessingNumber(1,10);

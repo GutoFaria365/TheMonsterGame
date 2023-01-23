@@ -18,7 +18,7 @@ public abstract class Monster {
     public int getAttackPower() {
         return attackPower;
     }
-    public int attack() {
+    public int getAttack() {
         return attackPower;
     }
     public int getHealth() {
@@ -32,10 +32,10 @@ public abstract class Monster {
     public boolean isDead(){
         if(this.health <= 0) {
             this.isDead = true;
-            System.out.println(this.getName() + " has been slain!!!");
+            System.out.println(this.getName() + this.hashCode() + " has been slain!!!");
             return true;
         } else {
-            System.out.println(this.getName() + " has " + this.health + " health remaining.");
+            System.out.println(this.getName() + this.hashCode() + " has " + this.health + " health remaining.");
         }
         return false;
     }
