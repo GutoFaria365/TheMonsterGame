@@ -22,10 +22,6 @@ public class Mummy extends Monster {
             this.consecutiveAttack = Game.roundCount;
             this.countAttacks += 1;
             System.out.println(this.countAttacks + "a" + "round2a" + this.consecutiveAttack + Game.roundCount);
-        } else if (Game.roundCount - consecutiveAttack > 1) {
-            this.consecutiveAttack = 0;
-            this.countAttacks = 0;
-            System.out.println(this.countAttacks + "a" + "round3a" + this.consecutiveAttack + Game.roundCount);
         } else {
             System.out.println(this.countAttacks + "a" + "round4a" + Game.roundCount);
         }
