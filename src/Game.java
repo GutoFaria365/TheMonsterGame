@@ -8,8 +8,8 @@ public class Game {
     }
 
     public Game() {
-        this.playerOne = new Player("Tiago", 1);
-        this.playerTwo = new Player("Beatriz", 1);
+        this.playerOne = new Player("Tiago", 5);
+        this.playerTwo = new Player("Beatriz", 5);
         this.roundCount = 1;
     }
 
@@ -29,8 +29,8 @@ public class Game {
     public void randomMonster(Player player) {
         for (int i = 0; i < player.getNumberOfMonsters(); i++) {
             switch (Utilities.generateGuessingNumber()) {
-                case 1 -> player.monsters[i] = new Mummy();
-                case 2 -> player.monsters[i] = new Mummy();
+                case 1 -> player.monsters[i] = new Werewolf();
+                case 2 -> player.monsters[i] = new Vampire();
                 case 3 -> player.monsters[i] = new Mummy();
             }
         }
